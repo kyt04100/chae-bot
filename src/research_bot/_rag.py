@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from . import config, llm, retrieve
+from . import config, llm, memory, retrieve
 
 CITATION_HINT = (
     "When you cite, use the bracket form like [paper-id] matching the IDs shown above. "
@@ -18,6 +18,7 @@ CITATION_HINT = (
 
 @dataclass
 class BuiltPrompt:
+    memory_block: str      # user/lab/project context (may be empty)
     persona: str           # bot persona + citation rule (cacheable)
     context: str           # retrieved chunks block (varies per query)
     user_msg: str          # final user message (question + optional draft)
@@ -44,13 +45,16 @@ def build_prompt(
     year_min: int | None = None,
     k: int = 8,
     extra_user_context: str = "",
+    include_memory: bool = True,
 ) -> BuiltPrompt:
     hits = retrieve.search(
         question, topics=topics, lab_only=lab_only, year_min=year_min, k=k
     )
     context = _format_context(hits)
     user_msg = question if not extra_user_context else f"{extra_user_context}\n\n---\n\n{question}"
+    memory_block = memory.load_memory_context() if include_memory else ""
     return BuiltPrompt(
+        memory_block=memory_block,
         persona=f"{persona}\n\n{CITATION_HINT}",
         context=f"=== RETRIEVED CONTEXT ===\n{context}\n=== END CONTEXT ===",
         user_msg=user_msg,
@@ -68,7 +72,11 @@ def rag_answer(
     k: int = 8,
     model: str | None = None,
     extra_user_context: str = "",
+    include_memory: bool = False,
 ) -> str:
+    """API path: include_memory defaults to False because the API doesn't need
+    the local-paste enrichment, and memory in the system prompt would burn cache
+    on personal data that rarely affects the answer. Override if needed."""
     try:
         bp = build_prompt(
             question=question,
@@ -78,17 +86,20 @@ def rag_answer(
             year_min=year_min,
             k=k,
             extra_user_context=extra_user_context,
+            include_memory=include_memory,
         )
     except RuntimeError as e:
         return f"[error] {e}"
 
-    # System split into 2 blocks:
-    #   1. persona + citation rules (static per bot)  → cached
-    #   2. retrieved context (varies per query)       → not cached
-    system_blocks = [
-        {"type": "text", "text": bp.persona, "cache_control": {"type": "ephemeral"}},
-        {"type": "text", "text": bp.context},
-    ]
+    # System split into blocks:
+    #   1. (optional) memory — rarely-changing user/lab context, cacheable
+    #   2. persona + citation rules (static per bot) — cached
+    #   3. retrieved context (varies per query) — not cached
+    system_blocks: list[dict] = []
+    if bp.memory_block:
+        system_blocks.append({"type": "text", "text": bp.memory_block, "cache_control": {"type": "ephemeral"}})
+    system_blocks.append({"type": "text", "text": bp.persona, "cache_control": {"type": "ephemeral"}})
+    system_blocks.append({"type": "text", "text": bp.context})
 
     return llm.ask(
         system=system_blocks,

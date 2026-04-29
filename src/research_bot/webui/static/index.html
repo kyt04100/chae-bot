@@ -24,7 +24,11 @@
         </label>
         <label class="lbl chk">
           <input type="checkbox" id="extern" checked>
-          include external (arXiv + Semantic Scholar)
+          external (arXiv + S2)
+        </label>
+        <label class="lbl chk" id="mem-wrap">
+          <input type="checkbox" id="mem" checked>
+          lab/user memory
         </label>
       </div>
 
@@ -55,6 +59,11 @@
       <details>
         <summary id="external-summary">external hits</summary>
         <div id="external"></div>
+      </details>
+
+      <details>
+        <summary id="memory-summary">memory injected</summary>
+        <pre id="memory"></pre>
       </details>
     </section>
   </main>

@@ -10,4 +10,4 @@ Question: $ARGUMENTS
 
 Assembled prompt from local index (tri-hybrid / RF lens / mmWave / near-field chunks prioritized):
 
-!`.venv/Scripts/python -m research_bot.cli prompt trihybrid "$ARGUMENTS"`
+!`.venv/Scripts/python -m research_bot.cli prompt trihybrid --no-memory "$ARGUMENTS"`

@@ -12,8 +12,16 @@ async function loadStatus() {
     if (s.api_key_set) flags.push("anthropic");
     if (s.s2_key_set) flags.push("s2");
     const flagStr = flags.length ? ` · keys: ${flags.join("+")}` : " · manual mode";
+    const memStr = (s.memory_files && s.memory_files.length)
+      ? ` · memory: ${s.memory_files.length} files`
+      : " · no memory dir";
     $("status").textContent =
-      `${s.pdfs} PDFs · ${s.chunks} chunks · ${s.papers} papers${flagStr}`;
+      `${s.pdfs} PDFs · ${s.chunks} chunks · ${s.papers} papers${flagStr}${memStr}`;
+    if (!s.memory_files || s.memory_files.length === 0) {
+      $("mem").checked = false;
+      $("mem").disabled = true;
+      $("mem-wrap").title = "no auto-memory found at " + (s.memory_dir || "~/.claude/projects/");
+    }
   } catch (e) {
     $("status").textContent = "status unavailable";
   }
@@ -28,6 +36,7 @@ $("go").addEventListener("click", async () => {
     return;
   }
   const includeExternal = $("extern").checked;
+  const includeMemory = $("mem").checked;
 
   $("go").disabled = true;
   $("go").textContent = "thinking…";
@@ -37,7 +46,7 @@ $("go").addEventListener("click", async () => {
     const r = await fetch("/api/build", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ bot, question, include_external: includeExternal }),
+      body: JSON.stringify({ bot, question, include_external: includeExternal, include_memory: includeMemory }),
     });
     if (!r.ok) {
       const t = await r.text();
@@ -57,6 +66,14 @@ $("go").addEventListener("click", async () => {
             <div>${escapeHtml(h.snippet)}…</div>
           </div>`).join("")
       : "<p><i>(no local hits)</i></p>";
+
+    if (data.memory_block) {
+      $("memory").textContent = data.memory_block;
+      $("memory-summary").textContent = `memory injected (${data.memory_block.length.toLocaleString()} chars)`;
+    } else {
+      $("memory").textContent = "(memory not included)";
+      $("memory-summary").textContent = "memory not injected";
+    }
 
     $("external-summary").textContent = `external hits (${data.external_hits.length})`;
     $("external").innerHTML = data.external_hits.length

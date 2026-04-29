@@ -61,8 +61,12 @@ def ask(bot_name: str, question: tuple[str, ...], deep: bool, draft_path: str | 
 @click.option("--draft", "draft_path", type=click.Path(exists=True, dir_okay=False),
               default=None, help="path to draft file (fas bot only)")
 @click.option("-k", default=8, help="number of chunks to retrieve")
-def prompt_cmd(bot_name: str, question: tuple[str, ...], draft_path: str | None, k: int) -> None:
-    """Print self-contained prompt (persona + retrieved context + question) to stdout.
+@click.option("--no-memory", "no_memory", is_flag=True,
+              help="skip injecting Claude Code auto-memory (use inside slash commands "
+                   "where Claude already has memory loaded)")
+def prompt_cmd(bot_name: str, question: tuple[str, ...], draft_path: str | None,
+               k: int, no_memory: bool) -> None:
+    """Print self-contained prompt (memory + persona + retrieved context + question) to stdout.
 
     Used by Claude Code slash commands so Claude Max users can answer with no API call.
     """
@@ -96,12 +100,16 @@ def prompt_cmd(bot_name: str, question: tuple[str, ...], draft_path: str | None,
             lab_only=lab_only,
             k=k,
             extra_user_context=extra,
+            include_memory=not no_memory,
         )
     except RuntimeError as e:
         console.print(f"[red]{e}[/red]")
         sys.exit(1)
 
     # Plain stdout (no rich markup) so slash commands feed it cleanly to the LLM.
+    if bp.memory_block:
+        print(bp.memory_block)
+        print()
     print(bp.persona)
     print()
     print(bp.context)

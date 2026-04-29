@@ -12,4 +12,4 @@ Question: $ARGUMENTS
 
 Assembled prompt from local index:
 
-!`.venv/Scripts/python -m research_bot.cli prompt general "$ARGUMENTS"`
+!`.venv/Scripts/python -m research_bot.cli prompt general --no-memory "$ARGUMENTS"`

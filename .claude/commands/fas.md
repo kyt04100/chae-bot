@@ -10,4 +10,4 @@ Question: $ARGUMENTS
 
 Assembled prompt from local index (FAS-tagged chunks prioritized):
 
-!`.venv/Scripts/python -m research_bot.cli prompt fas "$ARGUMENTS"`
+!`.venv/Scripts/python -m research_bot.cli prompt fas --no-memory "$ARGUMENTS"`

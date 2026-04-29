@@ -29,6 +29,7 @@ class BuildRequest(BaseModel):
     bot: str = Field(..., description="general | fas | trihybrid")
     question: str
     include_external: bool = True
+    include_memory: bool = True
     k: int = 8
 
 
@@ -51,6 +52,7 @@ class ExternalHitOut(BaseModel):
 
 
 class BuildResponse(BaseModel):
+    memory_block: str
     persona: str
     local_context: str
     external_context: str
@@ -77,6 +79,7 @@ def build(req: BuildRequest) -> BuildResponse:
             persona=persona,
             topics=topics,
             k=req.k,
+            include_memory=req.include_memory,
         )
     except RuntimeError as e:
         raise HTTPException(500, str(e))
@@ -84,13 +87,17 @@ def build(req: BuildRequest) -> BuildResponse:
     ext_hits = external.search_external(req.question) if req.include_external else []
     ext_context = external.format_external_context(ext_hits) if ext_hits else ""
 
-    full_parts = [bp.persona, bp.context]
+    full_parts = []
+    if bp.memory_block:
+        full_parts.append(bp.memory_block)
+    full_parts.extend([bp.persona, bp.context])
     if ext_context:
         full_parts.append(ext_context)
     full_parts.append(f"=== USER QUESTION ===\n{bp.user_msg}")
     full_prompt = "\n\n".join(full_parts)
 
     return BuildResponse(
+        memory_block=bp.memory_block,
         persona=bp.persona,
         local_context=bp.context,
         external_context=ext_context,
@@ -112,6 +119,7 @@ def build(req: BuildRequest) -> BuildResponse:
 
 @app.get("/api/status")
 def status() -> dict:
+    from .. import memory as memory_mod
     pdf_count = len(list(config.CORPUS_DIR.glob("*.pdf")))
     chunk_count = 0
     paper_count = 0
@@ -124,12 +132,18 @@ def status() -> dict:
         paper_count = len(set(arrow.column("paper_id").to_pylist()))
     except Exception:
         pass
+
+    mdir = memory_mod.find_memory_dir()
+    memory_files = sorted(p.name for p in mdir.glob("*.md")) if mdir else []
+
     return {
         "pdfs": pdf_count,
         "chunks": chunk_count,
         "papers": paper_count,
         "api_key_set": bool(config.ANTHROPIC_API_KEY),
         "s2_key_set": bool(config.SEMANTIC_SCHOLAR_API_KEY),
+        "memory_dir": str(mdir) if mdir else None,
+        "memory_files": memory_files,
     }
 
 
