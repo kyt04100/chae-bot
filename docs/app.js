@@ -3,10 +3,82 @@ const escapeHtml = (s) => (s || "").replace(/[&<>"']/g, (c) => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
 }[c]));
 
+const LOCAL_URL = "http://127.0.0.1:8000";
+const PROBE_TIMEOUT_MS = 1500;
+
 let PERSONAS = null;
 let PAPERS = null;
+let LOCAL_OK = false;
 
+// ─── localhost probe ─────────────────────────────────────────
+async function probeLocal() {
+  const probe = $("probe");
+  const btn = $("launch-btn");
+  const note = $("launcher-note");
+  probe.textContent = "checking local server…";
+  probe.className = "probe";
+
+  try {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), PROBE_TIMEOUT_MS);
+    const r = await fetch(LOCAL_URL + "/api/status", { signal: ctrl.signal });
+    clearTimeout(timer);
+    if (!r.ok) throw new Error("status " + r.status);
+    const s = await r.json();
+    LOCAL_OK = true;
+    probe.textContent = `local ✓ ${s.pdfs} PDFs · ${s.chunks} chunks`;
+    probe.classList.add("ok");
+    btn.disabled = false;
+    btn.textContent = "open chae-bot →";
+    btn.classList.add("ready");
+    note.innerHTML = `connected to <code>${LOCAL_URL}</code> — click to open the local web UI`;
+  } catch (e) {
+    LOCAL_OK = false;
+    probe.textContent = "local server not running";
+    probe.classList.add("err");
+    btn.disabled = false;
+    btn.textContent = "how to start chae-bot";
+    btn.classList.remove("ready");
+    note.innerHTML = `not reachable on <code>${LOCAL_URL}</code> — click for instructions, or use the Lite version below`;
+  }
+}
+
+$("launch-btn").addEventListener("click", () => {
+  if (LOCAL_OK) {
+    window.location.href = LOCAL_URL;
+  } else {
+    $("modal").hidden = false;
+  }
+});
+
+$("retry").addEventListener("click", async () => {
+  await probeLocal();
+  if (LOCAL_OK) {
+    $("modal").hidden = true;
+    window.location.href = LOCAL_URL;
+  }
+});
+
+$("modal-close").addEventListener("click", () => ($("modal").hidden = true));
+
+$("cmd-copy").addEventListener("click", async () => {
+  const text = $("cmd-block").textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    $("cmd-copy").textContent = "copied ✓";
+    setTimeout(() => ($("cmd-copy").textContent = "copy command"), 1500);
+  } catch (e) { alert("clipboard error: " + e.message); }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !$("modal").hidden) $("modal").hidden = true;
+});
+
+// ─── Lite version ────────────────────────────────────────────
 async function init() {
+  // probe runs in parallel with data load
+  probeLocal();
+
   try {
     const [pRes, papRes] = await Promise.all([
       fetch("personas.json"),
@@ -30,8 +102,6 @@ function selectPapers({ topics, labOnly }) {
   if (labOnly) pool = pool.filter((p) => p.lab_paper);
   if (topics && topics.length) {
     const want = new Set(topics);
-    // soft filter: keep papers tagged with any wanted topic, but if result < 8,
-    // fall through to full pool (so general bot still gets coverage).
     const hit = pool.filter((p) => (p.topics || []).some((t) => want.has(t)));
     if (hit.length >= 6) pool = hit;
   }
@@ -74,16 +144,10 @@ function buildPrompt({ bot, question, labOnly }) {
 }
 
 $("go").addEventListener("click", () => {
-  if (!PERSONAS || !PAPERS) {
-    alert("data not loaded yet");
-    return;
-  }
+  if (!PERSONAS || !PAPERS) { alert("data not loaded yet"); return; }
   const bot = $("bot").value;
   const question = $("q").value.trim();
-  if (!question) {
-    $("q").focus();
-    return;
-  }
+  if (!question) { $("q").focus(); return; }
   const labOnly = $("lab-only").checked;
 
   const { prompt, papers } = buildPrompt({ bot, question, labOnly });
@@ -110,9 +174,7 @@ $("copy").addEventListener("click", async () => {
     await navigator.clipboard.writeText(text);
     $("copy").textContent = "copied ✓";
     setTimeout(() => ($("copy").textContent = "copy prompt"), 1500);
-  } catch (e) {
-    alert("clipboard error: " + e.message);
-  }
+  } catch (e) { alert("clipboard error: " + e.message); }
 });
 
 $("q").addEventListener("keydown", (e) => {

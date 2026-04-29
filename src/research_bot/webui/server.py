@@ -7,6 +7,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -15,6 +16,18 @@ from .. import _rag, config, external
 from ..bots import fas as fas_mod, general as general_mod, trihybrid as trihybrid_mod
 
 app = FastAPI(title="chae-bot", description="Local research assistant for the Yonsei Intelligence Networking Lab")
+
+# Allow the static GitHub Pages launcher to probe and link to this server.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://kyt04100.github.io",
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+    ],
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
 
 STATIC_DIR = Path(__file__).parent / "static"
 
