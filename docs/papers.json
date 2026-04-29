@@ -1,0 +1,610 @@
+[
+  {
+    "id": "fas-part1-2023",
+    "title": "Fluid Antenna System Part I: Preliminaries",
+    "authors": [
+      "K.-K. Wong",
+      "W. K. New",
+      "X. Hao",
+      "K.-F. Tong",
+      "C.-B. Chae"
+    ],
+    "year": 2023,
+    "venue": "IEEE Communications Letters",
+    "topics": [
+      "fas"
+    ],
+    "lab_paper": true,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "fas-part2-2023",
+    "title": "Fluid Antenna System Part II: Research Opportunities",
+    "authors": [
+      "K.-K. Wong",
+      "K.-F. Tong",
+      "C.-B. Chae"
+    ],
+    "year": 2023,
+    "venue": "IEEE Communications Letters",
+    "topics": [
+      "fas"
+    ],
+    "lab_paper": true,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "fas-part3-2023",
+    "title": "Fluid Antenna System Part III: A New Paradigm of Distributed Artificial Scattering Surfaces for Massive Connectivity",
+    "authors": [
+      "K.-K. Wong",
+      "K.-F. Tong",
+      "C.-B. Chae"
+    ],
+    "year": 2023,
+    "venue": "IEEE Communications Letters",
+    "topics": [
+      "fas"
+    ],
+    "lab_paper": true,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "fas-outage-diversity-2024",
+    "title": "Fluid Antenna System: New Insights on Outage Probability and Diversity Gain",
+    "authors": [
+      "W. K. New",
+      "K.-K. Wong",
+      "X. Hao",
+      "K.-F. Tong",
+      "C.-B. Chae"
+    ],
+    "year": 2024,
+    "venue": "IEEE Transactions on Wireless Communications",
+    "topics": [
+      "fas"
+    ],
+    "lab_paper": true,
+    "abstract": "To enable innovative applications and services, both industry and academia are exploring new technologies for sixth generation (6G) communications. One of the promising candidates is fluid antenna system (FAS). Unlike existing systems, FAS is a novel communication technology where its antenna can freely change its position and shape within a given space. Compared to the traditional systems, this unique capability has the potential of providing higher diversity and interference-free communications. Nevertheless, the performance limits of FAS remain unclear as its system properties are difficult to analyze. To address this, we approximate the outage probability and diversity gain of FAS in closed-form expressions. We then propose a suboptimal FAS with $N^{*}$ ports, where a significant gain can be obtained over FAS with $N^{*}-1$ ports whilst FAS with $N^{*}+1$ ports only yields marginal improvement over the proposed suboptimal FAS. In this paper, we also provide analytical and simulatio",
+    "arxiv_url": "https://arxiv.org/abs/2301.00073v2"
+  },
+  {
+    "id": "fas-channel-est-oversampling-2025",
+    "title": "Channel Estimation and Reconstruction in Fluid Antenna System: Oversampling is Essential",
+    "authors": [
+      "W. K. New",
+      "K.-K. Wong",
+      "H. Xu",
+      "F. Rostami",
+      "R. Murch",
+      "C.-B. Chae"
+    ],
+    "year": 2025,
+    "venue": "IEEE Transactions on Wireless Communications",
+    "topics": [
+      "fas"
+    ],
+    "lab_paper": true,
+    "abstract": "Fluid antenna system (FAS) has recently surfaced as a promising technology for the upcoming sixth generation (6G) wireless networks. Unlike traditional antenna system (TAS) with fixed antenna location, FAS introduces a flexible component in which the radiating element can switch its position within a predefined space. This capability allows FAS to achieve additional diversity and multiplexing gains. Nevertheless, to fully reap the benefits of FAS, obtaining channel state information (CSI) over the predefined space is crucial. In this paper, we study the system with a transmitter equipped with a traditional fixed antenna and a receiver with a fluid antenna by considering an electromagnetic-compliant channel model. We address the challenges of channel estimation and reconstruction using Nyquist sampling and maximum likelihood estimation (MLE) methods. Our analysis reveals a fundamental tradeoff between the accuracy of the reconstructed channel and the number of estimated channels, indica",
+    "arxiv_url": "https://arxiv.org/abs/2405.15607v2"
+  },
+  {
+    "id": "ai-empowered-fas-2024",
+    "title": "AI-empowered Fluid Antenna Systems: Opportunities, Challenges, and Future Directions",
+    "authors": [
+      "C. Wang",
+      "Z. Li",
+      "K.-K. Wong",
+      "R. Murch",
+      "C.-B. Chae",
+      "S. Jin"
+    ],
+    "year": 2024,
+    "venue": "IEEE Wireless Communications",
+    "topics": [
+      "fas",
+      "ai-comm"
+    ],
+    "lab_paper": true,
+    "abstract": "Extremely large-scale antenna arrays (ELAA) play a critical role in enabling the functionalities of next generation wireless communication systems. However, as the number of antennas increases, ELAA systems face significant bottlenecks, such as excessive interconnection costs and high computational complexity. Efficient distributed signal processing (SP) algorithms show great promise in overcoming these challenges. In this paper, we provide a comprehensive overview of distributed SP algorithms for ELAA systems, tailored to address these bottlenecks. We start by presenting three representative forms of ELAA systems: single-base station ELAA systems, coordinated distributed antenna systems, and ELAA systems integrated with emerging technologies. For each form, we review the associated distributed SP algorithms in the literature. Additionally, we outline several important future research directions that are essential for improving the performance and practicality of ELAA systems.",
+    "arxiv_url": "https://arxiv.org/abs/2407.16121v2"
+  },
+  {
+    "id": "fas-mumimo-isac-drl-2024",
+    "title": "Fluid Antenna System Liberating Multiuser MIMO for ISAC via Deep Reinforcement Learning",
+    "authors": [
+      "C. Wang",
+      "G. Ki",
+      "K.-K. Wong",
+      "Z. Li",
+      "D. W. Kwan",
+      "C.-B. Chae"
+    ],
+    "year": 2024,
+    "venue": "IEEE Transactions on Wireless Communications",
+    "topics": [
+      "fas",
+      "isac",
+      "ai-comm"
+    ],
+    "lab_paper": true,
+    "abstract": "Optimistic value estimates provide one mechanism for directed exploration in reinforcement learning (RL). The agent acts greedily with respect to an estimate of the value plus what can be seen as a value bonus. The value bonus can be learned by estimating a value function on reward bonuses, propagating local uncertainties around rewards. However, this approach only increases the value bonus for an action retroactively, after seeing a higher reward bonus from that state and action. Such an approach does not encourage the agent to visit a state and action for the first time. In this work, we introduce an algorithm for exploration called Value Bonuses with Ensemble errors (VBE), that maintains an ensemble of random action-value functions (RQFs). VBE uses the errors in the estimation of these RQFs to design value bonuses that provide first-visit optimism and deep exploration. The key idea is to design the rewards for these RQFs in such a way that the value bonus can decrease to zero. We sh",
+    "arxiv_url": "https://arxiv.org/abs/2602.12375v1"
+  },
+  {
+    "id": "fluid-ris-onoff-2025",
+    "title": "Fluid Reconfigurable Intelligent Surfaces: Joint On-Off Selection and Beamforming with Discrete Phase Shifts",
+    "authors": [
+      "H. Xiao",
+      "X. Hu",
+      "K.-K. Wong",
+      "H. Hong",
+      "G. Alexandropoulos",
+      "C.-B. Chae"
+    ],
+    "year": 2025,
+    "venue": "IEEE Wireless Communications Letters",
+    "topics": [
+      "fas",
+      "ris"
+    ],
+    "lab_paper": true,
+    "abstract": "This letter proposes a fluid reconfigurable intelligent surface (FRIS) paradigm, extending the conventional reconfigurable intelligent surface (RIS) technology to incorporate position reconfigurability of the elements. In our model, a `fluid' element is realized by a dense matrix of subelements over a given space and dynamically selecting specific elements for signal modulation based on channel conditions. Specifically, we consider a FRIS-assisted single-user single-input single-output (SU-SISO) system and formulate an optimization problem that can jointly optimize element selection and their discrete phase shifts to maximize the achievable rate. To address this problem efficiently, we propose an iterative algorithm based on the cross-entropy optimization (CEO) framework. Simulation results reveal that FRIS achieves significant performance gains over traditional RIS.",
+    "arxiv_url": "https://arxiv.org/abs/2503.14601v1"
+  },
+  {
+    "id": "slow-fama-2023",
+    "title": "Slow Fluid Antenna Multiple Access",
+    "authors": [
+      "K.-K. Wong",
+      "D. Morales-Jimenez",
+      "K.-F. Tong",
+      "C.-B. Chae"
+    ],
+    "year": 2023,
+    "venue": "IEEE Transactions on Communications",
+    "topics": [
+      "fas",
+      "multiple-access"
+    ],
+    "lab_paper": true,
+    "abstract": "We investigate whether equipping fluid-antenna (FA) receivers with multiple ($L&gt;1$) radiofrequency (RF) chains can improve the performance of the slow fluid-antenna multiple access (FAMA) technique, which enables open-loop connectivity with channel state information (CSI) available only at the receiver side. We analyze the case of slow-FAMA users equipped with multiport receivers, so that $L$ ports of the FA are selected and combined to reduce interference. We show that a joint design of the port selection matrix and the combining vector at each receiver yields significant performance gains over reference schemes, demonstrating the potential of multiport reception in FA systems with a limited number of RF chains.",
+    "arxiv_url": "https://arxiv.org/abs/2507.17505v1"
+  },
+  {
+    "id": "opportunistic-fama-2023",
+    "title": "Opportunistic Fluid Antenna Multiple Access",
+    "authors": [
+      "K.-K. Wong",
+      "K.-F. Tong",
+      "Y. Chen",
+      "Y. Zhang",
+      "C.-B. Chae"
+    ],
+    "year": 2023,
+    "venue": "IEEE Transactions on Wireless Communications",
+    "topics": [
+      "fas",
+      "multiple-access"
+    ],
+    "lab_paper": true,
+    "abstract": "Fluid antenna is a novel technology that can make an antenna appear instantly at one of N preset locations in a predefined space. An important application is to adopt fluid antenna in a small space of mobile device for obtaining the tremendous diversity hidden in the small space. Previous results have revealed that a single-antenna fluid antenna system, even with a very small space, can outperform a multiple antenna maximum ratio combining (MRC) system if $N$ is large enough. This paper explores the potential of using fluid antenna for multiple access through performance analysis. Fluid antenna multiple access (FAMA) exploits moments of deep fade experienced by the interference to achieve a favourable channel condition for the desired signal, without requiring sophisticated signal processing. We analyze the FAMA system by first deriving the outage probability of the signal-to-interference ratio (SIR) in a double integral form. We then obtain an outage probability upper bound in closed ",
+    "arxiv_url": "https://arxiv.org/abs/2006.05508v1"
+  },
+  {
+    "id": "fas-secret-comm-2023",
+    "title": "Fluid Antenna Enabling Secret Communications",
+    "authors": [
+      "B. Tang",
+      "H. Xu",
+      "K.-K. Wong",
+      "K.-F. Tong",
+      "Y. Zhang",
+      "C.-B. Chae"
+    ],
+    "year": 2023,
+    "venue": "IEEE Communications Letters",
+    "topics": [
+      "fas",
+      "security"
+    ],
+    "lab_paper": true,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "fas-graph-mae-2024",
+    "title": "Learning-Induced Channel Extrapolation for Fluid Antenna Systems Using Asymmetric Graph Masked Autoencoder",
+    "authors": [
+      "H. Zhang",
+      "J. Wang",
+      "C. Wang",
+      "C.-C. Wang",
+      "K.-K. Wong",
+      "B. Wang",
+      "C.-B. Chae"
+    ],
+    "year": 2024,
+    "venue": "IEEE Wireless Communications Letters",
+    "topics": [
+      "fas",
+      "ai-comm"
+    ],
+    "lab_paper": true,
+    "abstract": "Masked autoencoders are scalable vision learners, as the title of MAE \\cite{he2022masked}, which suggests that self-supervised learning (SSL) in vision might undertake a similar trajectory as in NLP. Specifically, generative pretext tasks with the masked prediction (e.g., BERT) have become a de facto standard SSL practice in NLP. By contrast, early attempts at generative methods in vision have been buried by their discriminative counterparts (like contrastive learning); however, the success of mask image modeling has revived the masking autoencoder (often termed denoising autoencoder in the past). As a milestone to bridge the gap with BERT in NLP, masked autoencoder has attracted unprecedented attention for SSL in vision and beyond. This work conducts a comprehensive survey of masked autoencoders to shed insight on a promising direction of SSL. As the first to review SSL with masked autoencoders, this work focuses on its application in vision by discussing its historical developments, ",
+    "arxiv_url": "https://arxiv.org/abs/2208.00173v1"
+  },
+  {
+    "id": "heath-mmwave-overview-2016",
+    "title": "An Overview of Signal Processing Techniques for Millimeter Wave MIMO Systems",
+    "authors": [
+      "R. W. Heath Jr.",
+      "N. Gonzalez-Prelcic",
+      "S. Rangan",
+      "W. Roh",
+      "A. M. Sayeed"
+    ],
+    "year": 2016,
+    "venue": "IEEE Journal of Selected Topics in Signal Processing",
+    "topics": [
+      "mmwave",
+      "hybrid-beamforming",
+      "tri-hybrid"
+    ],
+    "lab_paper": false,
+    "abstract": "Communication at millimeter wave (mmWave) frequencies is defining a new era of wireless communication. The mmWave band offers higher bandwidth communication channels versus those presently used in commercial wireless systems. The applications of mmWave are immense: wireless local and personal area networks in the unlicensed band, 5G cellular systems, not to mention vehicular area networks, ad hoc networks, and wearables. Signal processing is critical for enabling the next generation of mmWave communication. Due to the use of large antenna arrays at the transmitter and receiver, combined with radio frequency and mixed signal power constraints, new multiple-input multiple-output (MIMO) communication signal processing techniques are needed. Because of the wide bandwidths, low complexity transceiver algorithms become important. There are opportunities to exploit techniques like compressed sensing for channel estimation and beamforming. This article provides an overview of signal processing",
+    "arxiv_url": "https://arxiv.org/abs/1512.03007v1"
+  },
+  {
+    "id": "sayeed-cap-mimo-2010",
+    "title": "Continuous Aperture Phased MIMO: Basic Theory and Applications",
+    "authors": [
+      "A. M. Sayeed",
+      "N. Behdad"
+    ],
+    "year": 2010,
+    "venue": "Allerton Conference",
+    "topics": [
+      "rf-lens",
+      "hybrid-beamforming"
+    ],
+    "lab_paper": false,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "rflens-mmwave-2018",
+    "title": "RF Lens Embedded Antenna Array for mmWave MIMO: Design and Performance",
+    "authors": [
+      "Y.-J. Cho",
+      "G.-Y. Suk",
+      "B. Kim",
+      "D.-K. Kim",
+      "C.-B. Chae"
+    ],
+    "year": 2018,
+    "venue": "IEEE Communications Magazine",
+    "topics": [
+      "rf-lens",
+      "mmwave",
+      "tri-hybrid"
+    ],
+    "lab_paper": true,
+    "abstract": "The requirement of high data-rate in the fifth generation wireless systems (5G) calls for the ultimate utilization of the wide bandwidth in the mmWave frequency band. Researchers seeking to compensate for mmWave's high path loss and to achieve both gain and directivity have proposed that mmWave multiple-input multiple-output (MIMO) systems make use of beamforming systems. Hybrid beamforming in mmWave demonstrates promising performance in achieving high gain and directivity by using phase shifters at the analog processing block. What remains a problem, however, is the actual implementation of mmWave beamforming systems; to fabricate such a system is costly and complex. With the aim of reducing such cost and complexity, this article presents actual prototypes of the lens antenna as an effective device to be used in the future 5G mmWave hybrid beamforming systems. Using a lens as a passive phase shifter enables beamforming without the heavy network of active phase shifters, while gain and",
+    "arxiv_url": "https://arxiv.org/abs/1801.07167v1"
+  },
+  {
+    "id": "rflens-massive-mimo-2016",
+    "title": "RF Lens-embedded Massive MIMO Systems: Fabrication Issues and Codebook Design",
+    "authors": [
+      "T. Kwon",
+      "Y.-G. Lim",
+      "B. Min",
+      "C.-B. Chae"
+    ],
+    "year": 2016,
+    "venue": "IEEE Transactions on Microwave Theory and Techniques",
+    "topics": [
+      "rf-lens",
+      "mmwave",
+      "tri-hybrid"
+    ],
+    "lab_paper": true,
+    "abstract": "In this paper, we investigate a radio frequency (RF) lens-embedded massive multiple-input multiple-output (MIMO) system and evaluate the system performance of limited feedback by utilizing a technique for generating a suitable codebook for the system. We fabricate an RF lens that operates on a 77 GHz (mmWave) band. Experimental results show a proper value of amplitude gain and an appropriate focusing property. In addition, using a simple numerical technique--beam propagation method (BPM)--we estimate the power profile of the RF lens and verify its accordance with experimental results. We also design a codebook--multi-variance codebook quantization (MVCQ)--for limited feedback by considering the characteristics of the RF lens antenna for massive MIMO systems. Numerical results confirm that the proposed system shows significant performance enhancement over a conventional massive MIMO system without an RF lens.",
+    "arxiv_url": "https://arxiv.org/abs/1510.00252v2"
+  },
+  {
+    "id": "beam-squint-rflens-2023",
+    "title": "Beam Squint in mmWave Systems: RF Lens Array vs. Phase-shifter-based Array",
+    "authors": [
+      "S.-H. Park",
+      "B. Kim",
+      "L. Dai",
+      "D.-K. Kim",
+      "C.-B. Chae"
+    ],
+    "year": 2023,
+    "venue": "IEEE Wireless Communications",
+    "topics": [
+      "rf-lens",
+      "mmwave",
+      "tri-hybrid"
+    ],
+    "lab_paper": true,
+    "abstract": "In this article, we discuss the potential of radio frequency (RF) lens for ultra-wideband millimeter-wave (mmWave) systems. In terms of the beam squint, we compare the proposed RF lens antenna with the phase shifter-based array for hybrid beamforming. To reduce the complexities for fully digital beamforming, researchers have come up with RF lens-based hybrid beamforming. The use of mmWave systems, however, causes an increase in bandwidth, which gives rise to the beam squint phenomenon. We first find the causative factors for beam squint in the dielectric RF lens antenna. Based on the beamforming gain at each frequency, we verify that, in a specific situation, RF lens can be free of the beam squint effect. We use 3D electromagnetic analysis software to numerically interpret the beam squint of each antenna type. Based on the results, we present the degraded spectral efficiency by system-level simulations with 3D indoor ray tracing. Finally, to verify our analysis, we fabricate an actual ",
+    "arxiv_url": "https://arxiv.org/abs/2112.04188v1"
+  },
+  {
+    "id": "power-leakage-lens-2019",
+    "title": "On the Power Leakage Problem in Millimeter Wave Massive MIMO Systems with Lens Antenna Array",
+    "authors": [
+      "T. Xie",
+      "L. Dai",
+      "J. Li",
+      "D. W. K. Ng",
+      "C.-B. Chae"
+    ],
+    "year": 2019,
+    "venue": "IEEE Transactions on Signal Processing",
+    "topics": [
+      "rf-lens",
+      "mmwave"
+    ],
+    "lab_paper": true,
+    "abstract": "The emerging millimeter-wave (mmWave) massive multiple-input multiple-output (MIMO) with lens antenna arrays, which is also known as \"beamspace MIMO\", can effectively reduce the required number of power-hungry radio frequency (RF) chains. Therefore, it has been considered as a promising technique for the upcoming 5G communications and beyond. However, most current studies on beamspace MIMO have not taken into account the important power leakage problem in beamspace channels, which possibly leads to a significant degradation in the signal-to-noise ratio (SNR) and the system sum-rate. To this end, we propose a beam aligning precoding method to handle the power leakage problem in this paper. Firstly, a phase shifter network (PSN) structure is proposed, which enables each RF chain in beamspace MIMO to select multiple beams to collect the leakage power. Then, a rotation-based precoding algorithm is designed based on the proposed PSN structure, which aligns the channel gains of the selected ",
+    "arxiv_url": "https://arxiv.org/abs/2008.10232v1"
+  },
+  {
+    "id": "sparse-rflens-aoa-2023",
+    "title": "Sparse RF Lens Antenna Array Design for AoA Estimation in Ultra-Wideband Systems",
+    "authors": [
+      "J.-H. Jo",
+      "J.-N. Shim",
+      "C.-B. Chae",
+      "D.-K. Kim",
+      "R. W. Heath Jr."
+    ],
+    "year": 2023,
+    "venue": "IEEE Transactions on Wireless Communications",
+    "topics": [
+      "rf-lens",
+      "aoa"
+    ],
+    "lab_paper": true,
+    "abstract": "In this paper, we propose a novel architecture for a lens antenna array (LAA) designed to work with a small number of antennas and enable angle-of-arrival (AoA) estimation for advanced 5G vehicle-to-everything (V2X) use cases that demand wider bandwidths and higher data rates. We derive a received signal in terms of optical analysis to consider the variability of the focal region for different carrier frequencies in a wideband multi-carrier system. By taking full advantage of the beam squint effect for multiple pilot signals with different frequencies, we propose a novel reconfiguration of antenna array (RAA) for the sparse LAA and a max-energy antenna selection (MS) algorithm for the AoA estimation. In addition, this paper presents an analysis of the received power at the single antenna with the maximum energy and compares it to simulation results. In contrast to previous studies on LAA that assumed a large number of antennas, which can require high complexity and hardware costs, the ",
+    "arxiv_url": "https://arxiv.org/abs/2306.16739v1"
+  },
+  {
+    "id": "crlb-aoa-rflens-2018",
+    "title": "Cramer-Rao Lower Bound on AoA Estimation with RF Lens-embedded Antenna Array",
+    "authors": [
+      "J.-N. Shim",
+      "H. Park",
+      "C.-B. Chae",
+      "D. K. Kim",
+      "Y. Eldar"
+    ],
+    "year": 2018,
+    "venue": "IEEE Antennas and Wireless Propagation Letters",
+    "topics": [
+      "rf-lens",
+      "aoa"
+    ],
+    "lab_paper": true,
+    "abstract": "In this paper, we consider the Cramer-Rao lower bound (CRLB) for estimation of a lens-embedded antenna array with deterministic parameters. Unlike CRLB of uniform linear array (ULA), it is noted that CRLB for direction of arrival (DoA) of lens-embedded antenna array is dominated by not only angle but characteristics of lens. Derivation is based on the approximation that amplitude of received signal with lens is approximated to Gaussian function. We confirmed that parameters needed to design a lens can be derived by standard deviation of Gaussian, which represents characteristic of received signal, by simulation of beam propagation method. Well-designed lens antenna shows better performance than ULA in terms of estimating DoA. This is a useful derivation because, result can be the guideline for designing parameters of lens to satisfy certain purpose.",
+    "arxiv_url": "https://arxiv.org/abs/1612.04130v1"
+  },
+  {
+    "id": "nearfield-xl-mimo-2022",
+    "title": "Channel Estimation for Extremely Large-Scale MIMO: Far-Field or Near-Field?",
+    "authors": [
+      "M. Cui",
+      "L. Dai"
+    ],
+    "year": 2022,
+    "venue": "IEEE Transactions on Communications",
+    "topics": [
+      "near-field",
+      "xl-mimo",
+      "tri-hybrid"
+    ],
+    "lab_paper": false,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "massive-mimo-next-2019",
+    "title": "Massive MIMO is a Reality—What is Next? Five Promising Research Directions for Antenna Arrays",
+    "authors": [
+      "E. Bjornson",
+      "L. Sanguinetti",
+      "H. Wymeersch",
+      "J. Hoydis",
+      "T. L. Marzetta"
+    ],
+    "year": 2019,
+    "venue": "Digital Signal Processing",
+    "topics": [
+      "massive-mimo",
+      "hybrid-beamforming"
+    ],
+    "lab_paper": false,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "fd-network-survey-2024",
+    "title": "A State-of-the-Art Survey on Full Duplex Network Design",
+    "authors": [
+      "Y. Kim",
+      "J.-W. Kwak",
+      "H. Yoo",
+      "B.-N. Kim",
+      "C.-B. Chae"
+    ],
+    "year": 2024,
+    "venue": "Proceedings of the IEEE",
+    "topics": [
+      "full-duplex",
+      "survey"
+    ],
+    "lab_paper": true,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "fd-6g-jsac-2023",
+    "title": "Full-duplex Wireless for 6G: Progress Brings New Opportunities with New Challenges",
+    "authors": [
+      "B. Smida",
+      "A. Sabharwal",
+      "G. Fodor",
+      "G. C. Alexandropoulos",
+      "H. A. Suraweera",
+      "C.-B. Chae"
+    ],
+    "year": 2023,
+    "venue": "IEEE Journal on Selected Areas in Communications",
+    "topics": [
+      "full-duplex",
+      "6g"
+    ],
+    "lab_paper": true,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "ris-prototype-2020",
+    "title": "Reconfigurable Intelligent Surface-based Wireless Communications: Antenna Design, Prototyping, and Experimental Results",
+    "authors": [
+      "L. Dai",
+      "B. Wang",
+      "M. Wang",
+      "X. Yang",
+      "J. Tan",
+      "S. Bi",
+      "S. Xu",
+      "F. Yang",
+      "Z. Chen",
+      "M. Di Renzo",
+      "C.-B. Chae",
+      "L. Hanzo"
+    ],
+    "year": 2020,
+    "venue": "IEEE Access",
+    "topics": [
+      "ris",
+      "prototype"
+    ],
+    "lab_paper": true,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "ris-iab-ncr-standards-2024",
+    "title": "Shaping a Smarter Electromagnetic Landscape: IAB, NCR, and RIS in 5G Standard and Future 6G",
+    "authors": [
+      "C.-K. Wen",
+      "L.-S. Tsai",
+      "A. Shojaeifard",
+      "P.-L. Liao",
+      "K.-K. Wong",
+      "C.-B. Chae"
+    ],
+    "year": 2024,
+    "venue": "IEEE Communications Standards Magazine",
+    "topics": [
+      "ris",
+      "standards",
+      "6g"
+    ],
+    "lab_paper": true,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "semantic-jsac-2023",
+    "title": "Beyond Transmitting Bits: Context, Semantics, and Task-Oriented Communications",
+    "authors": [
+      "D. Gunduz",
+      "Z. Qin",
+      "I. E. Aguerri",
+      "H. Dhillon",
+      "Z. Yang",
+      "A. Yener",
+      "K.-K. Wong",
+      "C.-B. Chae"
+    ],
+    "year": 2023,
+    "venue": "IEEE Journal on Selected Areas in Communications",
+    "topics": [
+      "semantic-comm",
+      "6g"
+    ],
+    "lab_paper": true,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "vit-semantic-2023",
+    "title": "On the Role of CNN and ViT on Semantic Communications: Analysis and Prototype Validation",
+    "authors": [
+      "H. Yoo",
+      "L. Dai",
+      "S. Kim",
+      "C.-B. Chae"
+    ],
+    "year": 2023,
+    "venue": "IEEE Access",
+    "topics": [
+      "semantic-comm",
+      "ai-comm"
+    ],
+    "lab_paper": true,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "massive-mimo-cell-boundary-2015",
+    "title": "Performance Analysis of Massive MIMO for Cell-Boundary Users",
+    "authors": [
+      "Y.-G. Lim",
+      "C.-B. Chae",
+      "G. Caire"
+    ],
+    "year": 2015,
+    "venue": "IEEE Transactions on Wireless Communications",
+    "topics": [
+      "massive-mimo"
+    ],
+    "lab_paper": true,
+    "abstract": "",
+    "arxiv_url": ""
+  },
+  {
+    "id": "active-ris-mimo-ofdm-2024",
+    "title": "Active RIS-Assisted MIMO-OFDM System: Analyses and Prototype Measurements",
+    "authors": [
+      "D.-M. Chian",
+      "F.-J. Chen",
+      "Y.-C. Chang",
+      "C.-K. Wen",
+      "C.-H. Wu",
+      "F.-K. Wang",
+      "K.-K. Wong",
+      "C.-B. Chae"
+    ],
+    "year": 2024,
+    "venue": "IEEE Communications Letters",
+    "topics": [
+      "ris",
+      "prototype"
+    ],
+    "lab_paper": true,
+    "abstract": "",
+    "arxiv_url": ""
+  }
+]

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chae-bot · Lite — Yonsei Intelligence Networking Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>chae-bot <span class="badge">Lite</span></h1>
+      <div class="sub">Yonsei Intelligence Networking Lab — Prof. Chan-Byoung Chae</div>
+    </div>
+    <div id="status">…</div>
+  </header>
+
+  <main>
+    <section class="ask">
+      <div class="row">
+        <label class="lbl">bot
+          <select id="bot">
+            <option value="general">general — broad lab knowledge</option>
+            <option value="fas">fas — Fluid Antenna Systems</option>
+            <option value="trihybrid">trihybrid — RF lens / mmWave / near-field</option>
+          </select>
+        </label>
+        <label class="lbl chk">
+          <input type="checkbox" id="lab-only">
+          lab papers only
+        </label>
+      </div>
+
+      <textarea id="q" rows="4" placeholder="질문을 입력하세요. 예: FAS Part I/II/III의 기여를 한 문단씩 비교해줘 — Ctrl+Enter로 제출"></textarea>
+
+      <div class="row">
+        <button id="go">build prompt</button>
+        <a class="btn-link" href="https://claude.ai/new" target="_blank" rel="noopener">open claude.ai →</a>
+        <span class="hint">생성된 프롬프트 복사 → Claude.ai 또는 ChatGPT에 붙여넣기</span>
+      </div>
+    </section>
+
+    <section class="output" hidden>
+      <div class="actions">
+        <button id="copy">copy prompt</button>
+        <span id="prompt-stats" class="hint"></span>
+      </div>
+
+      <details open>
+        <summary>full prompt (copy this)</summary>
+        <pre id="full"></pre>
+      </details>
+
+      <details>
+        <summary id="papers-summary">papers in prompt</summary>
+        <div id="papers"></div>
+      </details>
+    </section>
+
+    <section class="info">
+      <h2>About</h2>
+      <p>
+        Lite version: builds a self-contained prompt with the lab's persona, brief lab context, and the
+        seed paper list (titles, authors, year, venue, abstract where openly available on arXiv).
+        Paste the result into <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>
+        — Claude reads it as research context and answers using its own knowledge plus what's in the prompt.
+      </p>
+      <p>
+        Full version (with paper-body chunk retrieval, semantic search, external arXiv/S2 lookups, and
+        local memory injection) runs locally — see
+        <a href="https://github.com/kyt04100/chae-bot" target="_blank" rel="noopener">github.com/kyt04100/chae-bot</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <span>static · no backend · <a href="https://github.com/kyt04100/chae-bot" target="_blank" rel="noopener">source</a></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
