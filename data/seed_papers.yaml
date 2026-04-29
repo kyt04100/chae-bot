@@ -1,0 +1,249 @@
+# Seed papers for the research bots.
+# Resolution order: arXiv -> Semantic Scholar open-access -> manual list.
+# `id` is a local stable handle; everything else is hints for resolvers.
+
+papers:
+  # ===== A. FAS core (12) =====
+  - id: fas-part1-2023
+    title: "Fluid Antenna System Part I: Preliminaries"
+    authors: ["K.-K. Wong", "W. K. New", "X. Hao", "K.-F. Tong", "C.-B. Chae"]
+    venue: "IEEE Communications Letters"
+    year: 2023
+    topics: [fas]
+    lab_paper: true
+
+  - id: fas-part2-2023
+    title: "Fluid Antenna System Part II: Research Opportunities"
+    authors: ["K.-K. Wong", "K.-F. Tong", "C.-B. Chae"]
+    venue: "IEEE Communications Letters"
+    year: 2023
+    topics: [fas]
+    lab_paper: true
+
+  - id: fas-part3-2023
+    title: "Fluid Antenna System Part III: A New Paradigm of Distributed Artificial Scattering Surfaces for Massive Connectivity"
+    authors: ["K.-K. Wong", "K.-F. Tong", "C.-B. Chae"]
+    venue: "IEEE Communications Letters"
+    year: 2023
+    topics: [fas]
+    lab_paper: true
+
+  - id: fas-outage-diversity-2024
+    title: "Fluid Antenna System: New Insights on Outage Probability and Diversity Gain"
+    authors: ["W. K. New", "K.-K. Wong", "X. Hao", "K.-F. Tong", "C.-B. Chae"]
+    venue: "IEEE Transactions on Wireless Communications"
+    year: 2024
+    topics: [fas]
+    lab_paper: true
+
+  - id: fas-channel-est-oversampling-2025
+    title: "Channel Estimation and Reconstruction in Fluid Antenna System: Oversampling is Essential"
+    authors: ["W. K. New", "K.-K. Wong", "H. Xu", "F. Rostami", "R. Murch", "C.-B. Chae"]
+    venue: "IEEE Transactions on Wireless Communications"
+    year: 2025
+    topics: [fas]
+    lab_paper: true
+
+  - id: ai-empowered-fas-2024
+    title: "AI-empowered Fluid Antenna Systems: Opportunities, Challenges, and Future Directions"
+    authors: ["C. Wang", "Z. Li", "K.-K. Wong", "R. Murch", "C.-B. Chae", "S. Jin"]
+    venue: "IEEE Wireless Communications"
+    year: 2024
+    topics: [fas, ai-comm]
+    lab_paper: true
+
+  - id: fas-mumimo-isac-drl-2024
+    title: "Fluid Antenna System Liberating Multiuser MIMO for ISAC via Deep Reinforcement Learning"
+    authors: ["C. Wang", "G. Ki", "K.-K. Wong", "Z. Li", "D. W. Kwan", "C.-B. Chae"]
+    venue: "IEEE Transactions on Wireless Communications"
+    year: 2024
+    topics: [fas, isac, ai-comm]
+    lab_paper: true
+
+  - id: fluid-ris-onoff-2025
+    title: "Fluid Reconfigurable Intelligent Surfaces: Joint On-Off Selection and Beamforming with Discrete Phase Shifts"
+    authors: ["H. Xiao", "X. Hu", "K.-K. Wong", "H. Hong", "G. Alexandropoulos", "C.-B. Chae"]
+    venue: "IEEE Wireless Communications Letters"
+    year: 2025
+    topics: [fas, ris]
+    lab_paper: true
+
+  - id: slow-fama-2023
+    title: "Slow Fluid Antenna Multiple Access"
+    authors: ["K.-K. Wong", "D. Morales-Jimenez", "K.-F. Tong", "C.-B. Chae"]
+    venue: "IEEE Transactions on Communications"
+    year: 2023
+    topics: [fas, multiple-access]
+    lab_paper: true
+
+  - id: opportunistic-fama-2023
+    title: "Opportunistic Fluid Antenna Multiple Access"
+    authors: ["K.-K. Wong", "K.-F. Tong", "Y. Chen", "Y. Zhang", "C.-B. Chae"]
+    venue: "IEEE Transactions on Wireless Communications"
+    year: 2023
+    topics: [fas, multiple-access]
+    lab_paper: true
+
+  - id: fas-secret-comm-2023
+    title: "Fluid Antenna Enabling Secret Communications"
+    authors: ["B. Tang", "H. Xu", "K.-K. Wong", "K.-F. Tong", "Y. Zhang", "C.-B. Chae"]
+    venue: "IEEE Communications Letters"
+    year: 2023
+    topics: [fas, security]
+    lab_paper: true
+
+  - id: fas-graph-mae-2024
+    title: "Learning-Induced Channel Extrapolation for Fluid Antenna Systems Using Asymmetric Graph Masked Autoencoder"
+    authors: ["H. Zhang", "J. Wang", "C. Wang", "C.-C. Wang", "K.-K. Wong", "B. Wang", "C.-B. Chae"]
+    venue: "IEEE Wireless Communications Letters"
+    year: 2024
+    topics: [fas, ai-comm]
+    lab_paper: true
+
+  # ===== B. Tri-hybrid / Hybrid BF / RF Lens / Near-Field (10) =====
+  - id: heath-mmwave-overview-2016
+    title: "An Overview of Signal Processing Techniques for Millimeter Wave MIMO Systems"
+    authors: ["R. W. Heath Jr.", "N. Gonzalez-Prelcic", "S. Rangan", "W. Roh", "A. M. Sayeed"]
+    venue: "IEEE Journal of Selected Topics in Signal Processing"
+    year: 2016
+    topics: [mmwave, hybrid-beamforming, tri-hybrid]
+    lab_paper: false
+
+  - id: sayeed-cap-mimo-2010
+    title: "Continuous Aperture Phased MIMO: Basic Theory and Applications"
+    authors: ["A. M. Sayeed", "N. Behdad"]
+    venue: "Allerton Conference"
+    year: 2010
+    topics: [rf-lens, hybrid-beamforming]
+    lab_paper: false
+    notes: "If unresolved, search 'Sayeed CAP-MIMO' — pick most-cited variant"
+
+  - id: rflens-mmwave-2018
+    title: "RF Lens Embedded Antenna Array for mmWave MIMO: Design and Performance"
+    authors: ["Y.-J. Cho", "G.-Y. Suk", "B. Kim", "D.-K. Kim", "C.-B. Chae"]
+    venue: "IEEE Communications Magazine"
+    year: 2018
+    topics: [rf-lens, mmwave, tri-hybrid]
+    lab_paper: true
+
+  - id: rflens-massive-mimo-2016
+    title: "RF Lens-embedded Massive MIMO Systems: Fabrication Issues and Codebook Design"
+    authors: ["T. Kwon", "Y.-G. Lim", "B. Min", "C.-B. Chae"]
+    venue: "IEEE Transactions on Microwave Theory and Techniques"
+    year: 2016
+    topics: [rf-lens, mmwave, tri-hybrid]
+    lab_paper: true
+
+  - id: beam-squint-rflens-2023
+    title: "Beam Squint in mmWave Systems: RF Lens Array vs. Phase-shifter-based Array"
+    authors: ["S.-H. Park", "B. Kim", "L. Dai", "D.-K. Kim", "C.-B. Chae"]
+    venue: "IEEE Wireless Communications"
+    year: 2023
+    topics: [rf-lens, mmwave, tri-hybrid]
+    lab_paper: true
+
+  - id: power-leakage-lens-2019
+    title: "On the Power Leakage Problem in Millimeter Wave Massive MIMO Systems with Lens Antenna Array"
+    authors: ["T. Xie", "L. Dai", "J. Li", "D. W. K. Ng", "C.-B. Chae"]
+    venue: "IEEE Transactions on Signal Processing"
+    year: 2019
+    topics: [rf-lens, mmwave]
+    lab_paper: true
+
+  - id: sparse-rflens-aoa-2023
+    title: "Sparse RF Lens Antenna Array Design for AoA Estimation in Ultra-Wideband Systems"
+    authors: ["J.-H. Jo", "J.-N. Shim", "C.-B. Chae", "D.-K. Kim", "R. W. Heath Jr."]
+    venue: "IEEE Transactions on Wireless Communications"
+    year: 2023
+    topics: [rf-lens, aoa]
+    lab_paper: true
+
+  - id: crlb-aoa-rflens-2018
+    title: "Cramer-Rao Lower Bound on AoA Estimation with RF Lens-embedded Antenna Array"
+    authors: ["J.-N. Shim", "H. Park", "C.-B. Chae", "D. K. Kim", "Y. Eldar"]
+    venue: "IEEE Antennas and Wireless Propagation Letters"
+    year: 2018
+    topics: [rf-lens, aoa]
+    lab_paper: true
+
+  - id: nearfield-xl-mimo-2022
+    title: "Channel Estimation for Extremely Large-Scale MIMO: Far-Field or Near-Field?"
+    authors: ["M. Cui", "L. Dai"]
+    venue: "IEEE Transactions on Communications"
+    year: 2022
+    topics: [near-field, xl-mimo, tri-hybrid]
+    lab_paper: false
+
+  - id: massive-mimo-next-2019
+    title: "Massive MIMO is a Reality—What is Next? Five Promising Research Directions for Antenna Arrays"
+    authors: ["E. Bjornson", "L. Sanguinetti", "H. Wymeersch", "J. Hoydis", "T. L. Marzetta"]
+    venue: "Digital Signal Processing"
+    year: 2019
+    topics: [massive-mimo, hybrid-beamforming]
+    lab_paper: false
+
+  # ===== C. Shared / Adjacent (8) =====
+  - id: fd-network-survey-2024
+    title: "A State-of-the-Art Survey on Full Duplex Network Design"
+    authors: ["Y. Kim", "J.-W. Kwak", "H. Yoo", "B.-N. Kim", "C.-B. Chae"]
+    venue: "Proceedings of the IEEE"
+    year: 2024
+    topics: [full-duplex, survey]
+    lab_paper: true
+    notes: "User is first author"
+
+  - id: fd-6g-jsac-2023
+    title: "Full-duplex Wireless for 6G: Progress Brings New Opportunities with New Challenges"
+    authors: ["B. Smida", "A. Sabharwal", "G. Fodor", "G. C. Alexandropoulos", "H. A. Suraweera", "C.-B. Chae"]
+    venue: "IEEE Journal on Selected Areas in Communications"
+    year: 2023
+    topics: [full-duplex, 6g]
+    lab_paper: true
+
+  - id: ris-prototype-2020
+    title: "Reconfigurable Intelligent Surface-based Wireless Communications: Antenna Design, Prototyping, and Experimental Results"
+    authors: ["L. Dai", "B. Wang", "M. Wang", "X. Yang", "J. Tan", "S. Bi", "S. Xu", "F. Yang", "Z. Chen", "M. Di Renzo", "C.-B. Chae", "L. Hanzo"]
+    venue: "IEEE Access"
+    year: 2020
+    topics: [ris, prototype]
+    lab_paper: true
+
+  - id: ris-iab-ncr-standards-2024
+    title: "Shaping a Smarter Electromagnetic Landscape: IAB, NCR, and RIS in 5G Standard and Future 6G"
+    authors: ["C.-K. Wen", "L.-S. Tsai", "A. Shojaeifard", "P.-L. Liao", "K.-K. Wong", "C.-B. Chae"]
+    venue: "IEEE Communications Standards Magazine"
+    year: 2024
+    topics: [ris, standards, 6g]
+    lab_paper: true
+
+  - id: semantic-jsac-2023
+    title: "Beyond Transmitting Bits: Context, Semantics, and Task-Oriented Communications"
+    authors: ["D. Gunduz", "Z. Qin", "I. E. Aguerri", "H. Dhillon", "Z. Yang", "A. Yener", "K.-K. Wong", "C.-B. Chae"]
+    venue: "IEEE Journal on Selected Areas in Communications"
+    year: 2023
+    topics: [semantic-comm, 6g]
+    lab_paper: true
+
+  - id: vit-semantic-2023
+    title: "On the Role of CNN and ViT on Semantic Communications: Analysis and Prototype Validation"
+    authors: ["H. Yoo", "L. Dai", "S. Kim", "C.-B. Chae"]
+    venue: "IEEE Access"
+    year: 2023
+    topics: [semantic-comm, ai-comm]
+    lab_paper: true
+
+  - id: massive-mimo-cell-boundary-2015
+    title: "Performance Analysis of Massive MIMO for Cell-Boundary Users"
+    authors: ["Y.-G. Lim", "C.-B. Chae", "G. Caire"]
+    venue: "IEEE Transactions on Wireless Communications"
+    year: 2015
+    topics: [massive-mimo]
+    lab_paper: true
+
+  - id: active-ris-mimo-ofdm-2024
+    title: "Active RIS-Assisted MIMO-OFDM System: Analyses and Prototype Measurements"
+    authors: ["D.-M. Chian", "F.-J. Chen", "Y.-C. Chang", "C.-K. Wen", "C.-H. Wu", "F.-K. Wang", "K.-K. Wong", "C.-B. Chae"]
+    venue: "IEEE Communications Letters"
+    year: 2024
+    topics: [ris, prototype]
+    lab_paper: true

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chae-bot · Yonsei Intelligence Networking Lab</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>chae-bot</h1>
+    <div id="status">…</div>
+  </header>
+
+  <main>
+    <section class="ask">
+      <div class="row">
+        <label class="lbl">bot
+          <select id="bot">
+            <option value="general">general — broad lab knowledge</option>
+            <option value="fas">fas — Fluid Antenna Systems (paper-writing)</option>
+            <option value="trihybrid">trihybrid — RF lens / mmWave / near-field</option>
+          </select>
+        </label>
+        <label class="lbl chk">
+          <input type="checkbox" id="extern" checked>
+          include external (arXiv + Semantic Scholar)
+        </label>
+      </div>
+
+      <textarea id="q" rows="4" placeholder="질문을 입력하세요. 예: FAS Part I/II/III의 기여 비교"></textarea>
+
+      <div class="row">
+        <button id="go">build prompt</button>
+        <span id="hint" class="hint">로컬 검색 + 외부 검색 → 프롬프트 조립 후 복사 → claude.ai/Claude Code에 붙여넣기</span>
+      </div>
+    </section>
+
+    <section class="output" hidden>
+      <div class="actions">
+        <button id="copy">copy prompt</button>
+        <a class="btn-link" href="https://claude.ai/new" target="_blank" rel="noopener">open claude.ai →</a>
+      </div>
+
+      <details open>
+        <summary>full prompt (copy this)</summary>
+        <pre id="full"></pre>
+      </details>
+
+      <details>
+        <summary id="local-summary">local hits</summary>
+        <div id="local"></div>
+      </details>
+
+      <details>
+        <summary id="external-summary">external hits</summary>
+        <div id="external"></div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <span>local: <span id="endpoint">…</span></span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
